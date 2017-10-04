@@ -2,48 +2,121 @@
 <html>
 	<head>
 		<title>Hello World</title>
-	<script lang="text/javascript">
-		function green()
-		{document.body.style.backgroundcolor="green";
-		}
-		function blue()
-		{document.body.style.backgroundcolor="blue";
-		}
-		}function red()
-		{document.body.style.backgroundcolor="red";
-		}
-	</script>
-	<style>
-	.button {
-		background-color: #4CAF50;
-		border: none;
-		color: white;
-		padding: 15px 32px;
-		text-align: center;
-		text-decoration: none;
-		display: inline-block;
-		font-size: 16px;
-		margin: 4px 2px;
-		cursor: pointer;
-	}
 	
-	.button2{background-color: #008CBA;}
-	.button3 {background-color: #f44336;} /* Red */ 
-	
-	</style>
 	</head>
 	
-	<body>
-		<button class="button">Green</button>
-		<button class="button button2">Blue</button>
-		<button class="button button3">Red</button>
+	<script language="JavaScript">
+		function getCookieVal (offset) {
+		var endstr = document.cookie.indexOf (";", offset);
+		if (endstr == -1)
+		endstr = document.cookie.length;
+		return unescape(document.cookie.substring(offset, endstr));
+		}
 
+		function GetCookie (name) {
+		var arg = name + "=";
+		var alen = arg.length;
+		var clen = document.cookie.length;
+		var i = 0;
+		while (i < clen) {
+		var j = i + alen;
+		if (document.cookie.substring(i, j) == arg)
+		return getCookieVal (j);
+		i = document.cookie.indexOf(" ", i) + 1;
+		if (i == 0) break; 
+		}
+		return null;
+		}
+
+		function SetCookie (name, value) {
+		var argv = SetCookie.arguments;
+		var argc = SetCookie.arguments.length;
+		var expires = (argc > 2) ? argv[2] : null;
+		var path = (argc > 3) ? argv[3] : null;
+		var domain = (argc > 4) ? argv[4] : null;
+		var secure = (argc > 5) ? argv[5] : false;
+		document.cookie = name + "=" + escape (value) +
+		((expires == null) ? "" : ("; expires=" + expires.toGMTString())) +
+		((path == null) ? "" : ("; path=" + path)) +
+		((domain == null) ? "" : ("; domain=" + domain)) +
+		((secure == true) ? "; secure" : "");
+		}
+
+		function DeleteCookie(name) {
+		var exp = new Date();
+		FixCookieDate (exp); 
+		exp.setTime (exp.getTime() - 1); 
+		var cval = GetCookie (name);
+		if (cval != null)
+		document.cookie = name + "=" + cval + "; expires=" + exp.toGMTString();
+		}
+
+		var b = GetCookie("z")
+		if (b == null) {
+		storage()
+		}
+		
+		function storage() {
+		var c = prompt("Please enter in your name for storage purposes","")
+		var thenewdate = new Date ();
+		thenewdate.setTime(thenewdate.getTime() + (5*24*60*60*1000));
+		SetCookie('z',c,thenewdate);
+		}
+
+		function change() {
+		var c = prompt("Please enter in your name for storage purposes","")
+		var thenewdate = new Date ();
+		thenewdate.setTime(thenewdate.getTime() + (5*24*60*60*1000));
+		SetCookie('z',c,thenewdate);
+		location = "cask4name.html"
+		}
+
+		var z = GetCookie('z');
+		document.write("<center>Hi, "+z+".<br>"
+		+"<a href='javascript:change()'>You can change this name if you want.</a></center>")
+	//-->
+
+	</script>
+		
+	<SCRIPT Language="JavaScript">
+	
+	var today = new Date()
+	var targetDate = new Date("01/01/3000") //use full year 
+	var timeBeforeTarget = Math.floor(( targetDate.getTime()
+			- today.getTime()) / 86400000)
+	var msg = "<B>There are only "  + (timeBeforeTarget +1)  
+			 + " days until the year 3000.</B>"
+	document.write(msg)
+	//-->
+	</SCRIPT>
+	
+	<body>		
 		<h1>Hello World</h1>
 		<marquee> Erica Smith's page!</marquee>
-		<marquee behavior=alternate width=”202″ scrollamount=”8″ scrolldelay=”95″ height=”37″ bgcolor=”#00FFFF”>tryna be a master htmler like</marquee>
+		
+		
+		
 		<video width="400" controls>
 			<source src="http://sample-videos.com/video/mp4/720/big_buck_bunny_720p_1mb.mp4" type="video/mp4">
         </video>
+		
+
+		<center>
+		<FORM method=GET action=http://www.google.com/custom>
+		<TABLE bgcolor=#FFFFFF cellspacing=0 border=0>
+		<tr valign=top><td>
+		<A HREF=http://www.google.com/search>
+		<IMG SRC=http://www.google.com/logos/Logo_40wht.gif border=0 ALT=Google align=middle></A>
+		</td>
+		<td>
+		<INPUT TYPE=text name=q size=31 maxlength=255 value="">
+		<INPUT type=submit name=sa VALUE="Google Search">
+		<INPUT type=hidden name=cof VALUE="AH:center;GL:1;AWFID:37256b0d962b6b95;">
+
+		</td></tr></TABLE>
+		</FORM>
+		</center>
+
 		
 		<iframe width="1" height="1" 
 		src="https://www.youtube.com/embed/qnYcvvgE0ro?autoplay=1&loop=1&playlist=qnYcvvgE0ro" frameborder="0" allowfullscreen>
@@ -53,7 +126,7 @@
 		src="https://www.youtube.com/embed/f3IhshcqdPQ?start=180"frameborder="0" allowfullscreen>
 		</iframe>
 		
-		<object data="/html_5/tags/html_object_tag_example.cfm" width="350" height="95"></object><br />
+		
 		
 	</body>
 
