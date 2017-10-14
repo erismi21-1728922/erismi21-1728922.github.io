@@ -1,0 +1,158 @@
+	<head>
+		<title> Erica's HTML Tags Builder Website </title>
+		<link rel="stylesheet" type="text/css" href="anExternal.css"/>
+	</head>
+	
+	
+	body{
+		
+	
+	}
+	p{
+		
+		
+	}
+	h3{
+		
+		
+		
+	}
+	li{
+		
+		
+	}
+	body {
+    background:  linear-gradient(90deg, #b3dbd3, #f4d6db);
+    color: #777;
+	}
+	@keyframes change-background {
+	  0% {
+		background: violet;
+	  }
+	  14.3% {
+		background: indigo;
+	  }
+	  28.6% {
+		background: blue;
+	  }
+	  42.9% {
+		background: green;
+	  }
+	  57.2% {
+		background: yellow;
+	  }
+	  71.5% {
+		background: orange;
+	  }
+	  85.8% {
+		background: red;
+	  }
+	  100% {
+		background: violet;
+	  }
+	}
+
+	@-webkit-keyframes blink {
+	  0% {
+		background: violet;
+	  }
+	  14.3% {
+		background: indigo;
+	  }
+	  28.6% {
+		background: blue;
+	  }
+	  42.9% {
+		background: green;
+	  }
+	  57.2% {
+		background: yellow;
+	  }
+	  71.5% {
+		background: orange;
+	  }
+	  85.8% {
+		background: red;
+	  }
+	  100% {
+		background: violet;
+	  }
+	}
+
+	div {
+	  height: auto;
+	  width: auto;
+	  border: 1px solid black;
+	  animation: blink 20s linear infinite;
+	  -webkit-animation: blink 20s linear infinite;
+	}
+		
+		
+	
+	#Header{
+		width:500px;
+		margin-left: auto;
+		margin-right: auto;
+		margin-button: 10px;
+		border: solid 8px black;
+	}
+	#Header h1{
+		
+		
+
+	}
+	#LeftNav{
+		width:400px;
+		margin-left: 20px;
+		margin-right: 20px;
+		margin-button: 10px;
+		border: solid 8px black;	
+	}
+	p label{   
+		width:100px;   
+		float:left;   
+		margin-right:10px;   
+		text-align:rightright;   
+	}  
+	
+	#LeftNav img{
+		
+		
+		
+		
+	}
+	#LeftNav ul{
+		
+		
+		
+		
+	}
+	#LeftNav h3{
+		
+		
+		
+		
+	}
+	#Content{
+		width:700px;
+		margin-left: 460px;
+		margin-right: 20px;
+		margin-button: 10px;
+		border: solid 8px black;	
+
+		
+	}
+	
+	
+	
+	#Footer{
+		width:500px;
+		margin-left: auto;
+		margin-right: auto;
+		margin-button: 10px;
+		border: solid 8px black;	
+	}
+	input:checked + label{
+		background: yellow;  
+	}
+	
